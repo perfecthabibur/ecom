@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce App</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Tailwind CSS configuration for custom colors, etc.
+      tailwind.config = {
+        darkMode: 'class', // Enable dark mode based on class
+        theme: {
+          extend: {
+            colors: {
+              primary: '#3b82f6', // blue-500
+              secondary: '#60a5fa', // blue-400
+              accent: '#f59e0b', // amber-500
+              background: '#f8fafc', // slate-50 (light mode background)
+              text: '#1e293b', // slate-800 (light mode text)
+            },
+          },
+        },
+      };
+    </script>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.28.0",
+        "uuid": "https://aistudiocdn.com/uuid@^13.0.0"
+      }
+    }
+    </script>
+    <script>
+      // Injects the API_KEY from the environment variable (e.g., from Vercel)
+      // This allows browser-side code to access process.env.API_KEY.
+      // Vercel automatically exposes env variables prefixed with NEXT_PUBLIC_ or VITE_
+      // for client-side use in frameworks like Next.js or Vite.
+      // For a direct ES module setup like this, a custom injection is needed.
+      window.GEMINI_API_KEY = import.meta.env.VITE_API_KEY;
+    </script>
+</head>
+<body class="bg-background text-text antialiased dark:bg-gray-900 dark:text-gray-100">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

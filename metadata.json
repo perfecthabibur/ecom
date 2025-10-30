@@ -1,0 +1,7 @@
+{
+  "name": "E-commerce Guest Checkout App",
+  "description": "A simple e-commerce website with guest checkout for customers and an admin panel for product and order management. Features a Gemini-powered product description generator and a guest chatbot.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
